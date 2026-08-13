@@ -1,4 +1,4 @@
-package capitulo4;
+package implementacoes;
 
 public class AlgoritmoPesquisa {
 
