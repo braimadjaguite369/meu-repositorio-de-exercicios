@@ -85,12 +85,84 @@ public class AlgoritmoPesquisa {
         return nome.endsWith("m");
     }
 
+    
+   //Agora crio um método de pesquisa pelo Djikstra, que poode ser chamado por classes externas.
+   public static void pesquisaDjikstra(Map<String, Map<String, Integer>> grafo, String inicio, String fim){
+        Map<String, Integer> custos = new HashMap<>();
+        Map<String, String> pais = new HashMap<>();
+        List<String> processasos = new ArrayList<>();
+        //inicializar mapa de custos
+        for(String no : grafo.keySet()){
+            custos.put(no, INFINITO);
+        }
+        custos.put(inicio, 0);
+
+        for(String no : grafo.keySet()){
+            pais.put(no, null);
+        }
+        //"no" e "vertice" são sinónimos, só usei os dois para diferenciar e não criar confusão.
+        String vertice = encontrarNoMaisBarato(custos, processasos);
+
+        while (vertice != null) {
+            //um interruptor que termina o loop quando o vertice mais barato é o último. Do contrário, definiria o custo mais barato para todos os vertices.
+            if(vertice.equals(fim)){
+                break;
+            }
+            int custoAtual = custos.get(vertice);
+            Map<String, Integer> vizinhos =  grafo.getOrDefault(vertice, new HashMap<>());;
+            for(String vizinho : vizinhos.keySet()){
+                int novoCusto = custoAtual + vizinhos.get(vizinho);
+                if(novoCusto < custos.getOrDefault(vizinho, INFINITO)){
+                    custos.put(vizinho, novoCusto);
+                    pais.put(vizinho, vertice);
+                }
+            }
+            
+            processasos.add(vertice);
+            vertice = encontrarNoMaisBarato(custos, processasos);
+        }
+        imprimirCaminhoMinimo(pais, inicio, fim);
+        System.out.println("Com custo: " + custos.getOrDefault(fim, 0));
+   }
+
+    private static String encontrarNoMaisBarato(Map<String, Integer> custos, List<String> processados){
+        String noMaisBarato = null;
+        Integer menorCusto = INFINITO;
+        for(String no : custos.keySet()){
+            if(custos.get(no) < menorCusto && !processados.contains(no)){
+                menorCusto = custos.get(no);
+                noMaisBarato = no;      
+            }
+        }
+        return noMaisBarato;
+    }
+    private static void imprimirCaminhoMinimo(Map<String, String> pais, String inicio, String fim){
+        List<String> caiminhoMaisCurto = new ArrayList<>();
+        caiminhoMaisCurto.add(fim);
+        String pai = pais.get("fim");
+        while(pai != null){
+            caiminhoMaisCurto.add(pai);
+            pai = pais.get(pai);
+        }
+        Collections.reverse(caiminhoMaisCurto);
+        if(caiminhoMaisCurto.get(0).equals(inicio)){
+            System.out.println("Caminho minimo encontrado: " + caiminhoMaisCurto.toString());
+        } else{
+            System.out.println("Nao existe caminho valido entre os vertices especificados.");
+        }
+    }
+
+
+    //Este método "main" foi criado apenas para testar o algoritmo de Djikstra e criar exemplo de grafos de ponderados e não ponderados.
     public static void main(String[] arg){
 
         Map<String, List<String>> grafoNaoPonderado = new HashMap<>();
-        grafoNaoPonderado.put("inico", new ArrayList<>()).addAll(List.of("A", "B"));
-        grafoNaoPonderado.put("A", new ArrayList<>()).add("fim");
-        grafoNaoPonderado.put("B", new ArrayList<>()).addAll(List.of("A", "fim"));
+        grafoNaoPonderado.put("inicio", new ArrayList<>());
+        grafoNaoPonderado.get("inicio").addAll(List.of("A", "B"));
+        grafoNaoPonderado.put("A", new ArrayList<>());
+        grafoNaoPonderado.get("A").add("fim");
+        grafoNaoPonderado.put("B", new ArrayList<>());
+        grafoNaoPonderado.get("B").addAll(List.of("A", "fim"));
         grafoNaoPonderado.put("fim", new ArrayList<>());
 
         Map<String, Map<String, Integer>> grafo = new HashMap<>();
@@ -106,8 +178,9 @@ public class AlgoritmoPesquisa {
         grafo.get("B").put("fim", 5);
 
         grafo.put("fim", new HashMap<>());
+        pesquisaDjikstra(grafo, "inicio", "fim");
 
-        Map<String, Integer> custos = new HashMap<>();
+       /*  Map<String, Integer> custos = new HashMap<>();
         custos.put("A", 6);
         custos.put("B", 2);
         custos.put("fim", INFINITO);
@@ -135,34 +208,8 @@ public class AlgoritmoPesquisa {
         }
     
         imprimirCaminhoMinimo(pais, "inicio", "fim");
-        System.out.println("O custo minimo e: " + custos.get("fim"));
+        System.out.println("O custo minimo e: " + custos.get("fim"));*/
 
-    }
-    private static String encontrarNoMaisBarato(Map<String, Integer> custos, List<String> processados){
-        String noMaisBarato = null;
-        Integer menorCusto = INFINITO;
-        for(String no : custos.keySet()){
-            if(custos.get(no) < menorCusto && !processados.contains(no)){
-                menorCusto = custos.get(no);
-                noMaisBarato = no;      
-            }
-        }
-        return noMaisBarato;
-    }
-    private static void imprimirCaminhoMinimo(Map<String, String> pais, String inicio, String fim){
-        List<String> caiminhoMaisCurto = new ArrayList<>();
-        caiminhoMaisCurto.add(fim);
-        String pai = pais.get("fim");
-        while(pai != null){
-            caiminhoMaisCurto.add(pai);
-            pai = pais.get(pai);
-        }
-        Collections.reverse(caiminhoMaisCurto);
-        if(caiminhoMaisCurto.get(0).equals(inicio)){
-            System.out.println("Caminho minimo encontrado: " + caiminhoMaisCurto.toString());
-        } else{
-            System.out.println("Nao existe caminho valido entre os vertices especificados.");
-        }
     }
 
     

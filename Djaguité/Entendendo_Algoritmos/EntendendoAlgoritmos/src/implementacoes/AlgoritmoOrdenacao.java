@@ -53,12 +53,12 @@ public class AlgoritmoOrdenacao {
         if(lista.size() < 2){
             return lista;
         }
-        int indiceMeio = lista.size();
-        int pivo = lista.get(indiceMeio);
+        int indicePivo = lista.size() - 1;
+        int pivo = lista.get(indicePivo);
         List<Integer> menores = new ArrayList<>();
         List<Integer> maiores = new ArrayList<>();
         for(int i = 0; i < lista.size(); i++){
-            if(i == indiceMeio){
+            if(i == indicePivo){
                 continue;
             }
             if(lista.get(i) <= pivo){
