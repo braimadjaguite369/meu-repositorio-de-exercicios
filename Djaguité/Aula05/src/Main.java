@@ -8,7 +8,7 @@ public class Main{
         ContaBanco conta1 = new ContaBanco();
 
         conta1.setNumeroConta(666);
-        conta1.abrirConta("CC", "Djarai Jaló");
+        conta1.abrirConta("CC", "Califa Djaguité");
 
         ContaBanco conta2 = new ContaBanco();
         conta2.setNumeroConta(333);
