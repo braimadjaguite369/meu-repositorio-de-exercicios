@@ -1,0 +1,19 @@
+{
+    "biblioteca" : [
+        {
+            "id" : "6l",
+            "titulo" : "É por isso que a ciência é bonita",
+            "autor" : "Amade",
+            "paginas" : 270,
+            "editora" : "Editora Porto"
+        },
+        {
+            "id" : "123r",
+            "titulo" : "O impacto do uso de IA no ensino superior",
+            "autor" : "Djaguité",
+            "volume" : 369,
+            "numero" : 3,
+            "paginas" : 18
+        }
+    ]
+}

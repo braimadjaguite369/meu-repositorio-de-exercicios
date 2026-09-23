@@ -1,0 +1,15 @@
+{
+    "emails" : [
+        {
+            "to" : "Dj@guite",
+            "from": "Am@de",
+            "date" : "2026-09-22 10:07:36",
+            "heading" : "Reminder",
+            "body" : "Don't forget me",
+            "type" : {
+                "minetype" : "Personal",
+                "subtype" : "Family"
+            }
+        }
+    ]
+}

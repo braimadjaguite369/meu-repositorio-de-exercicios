@@ -1,0 +1,15 @@
+<biblioteca>
+    <livro id = "6l">
+        <titulo>É por isso que a ciência é bonita</titulo>
+        <author>Amade</author>
+        <paginas>270</paginas>
+        <editora>Editora Porto</editora>
+    </livro>
+    <revista-cientifica id = "123r">
+        <titulo>Os impactos do uso de IA no ensino superior</titulo>
+        <autor>Djaguite</autor>
+        <volume>369</volume>
+        <numero>3</numero>
+        <paginas>18</paginas>
+    </revista-cientifica>
+</biblioteca>

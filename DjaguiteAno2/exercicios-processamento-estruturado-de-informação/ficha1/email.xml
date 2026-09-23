@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<emails>
+    <email>
+        <to>Dj@uite</to>
+        <from>Am@de</from>
+        <date format = "yyyy-mm-dd HH:mm:ss">2026-09-22 09:54:27</date>
+        <heading>Reminder</heading>
+        <body>Don't forget me</body>
+        <type>
+            <minetype>Personal</minetype>
+            <subtype>Family</subtype>
+        </type>
+    </email>
+</emails>

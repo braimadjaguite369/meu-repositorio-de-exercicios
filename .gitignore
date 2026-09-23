@@ -1,1 +1,26 @@
+# Ao fazer o commit, ignorar ficheiros compilados em java (os ficheiros .class)
 *.class
+
+# Ficheiros do IntelliJ/IDEs
+.idea/
+**/.idea/
+**/*.iml
+*.iws
+*.ipr
+**/*.log
+**/.vscode/
+**/out/
+**/build/
+
+# Python (Ambientes virtuais, pacotes e cache)
+venv/
+.venv/
+env/
+ENV/
+**/__pycache__/
+*.pyc
+
+
+# Ficheiros temporários e do SO
+.DS_Store
+Thumbs.db

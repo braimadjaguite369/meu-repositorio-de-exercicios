@@ -1,0 +1,74 @@
+{
+    "ingridientes" : [
+        {
+            "nome" : "Spinach",
+            "categoria" : "vegetal",
+            "calorias" : {
+                "valor" : 18,
+                "unidade" : "Kcal",
+                "base_calculo" : 100,
+                "unidade_base" : "g"
+            }
+        },
+        {
+            "nome" : "Cheese",
+            "categoria" : "Dairy",
+            "calorias" : {
+                "valor" : 25,
+                "unidade" : "Kcal",
+                "base_calculo" : 100,
+                "unidade_base" : "g"
+            }
+        },
+        {
+            "nome" : "Tomato Sauce",
+            "categoria" : "Sauce",
+            "calorias" : {
+                "valor" : 40,
+                "unidade" : "Kcal",
+                "base_calculo" : 100,
+                "unidade_base" : "unit"
+            }
+        },
+        {
+            "nome" : "Oregano",
+            "categoria" : "Herb",
+            "calorias" : {
+                "valor" : 45,
+                "unidade" : "Kcal",
+                "base_calculo" : 100,
+                "unidade_base" : "g"
+            }
+        },
+        {
+            "nome" : "Cheacken",
+            "categoria" : "Meat",
+            "calorias" : {
+                "valor" : 32,
+                "unidade" : "Kcal",
+                "base_calculo" : 100,
+                "unidade_base" : "g"
+            }
+        },
+        {
+            "nome" : "Onion Sauce",
+            "categoria" : "Sauce",
+            "calorias" : {
+                "valor" : 55,
+                "unidade" : "Kcal",
+                "base_calculo" : 100,
+                "unidade_base" : "g"
+            }
+        },
+        {
+            "nome" : "Pasta",
+            "categoria" : "Pasta",
+            "calorias" : {
+                "valor" : 43,
+                "unidade" : "Kcal",
+                "base_calculo" : 100,
+                "unidade_base" : "ml"
+            }
+        }
+    ]
+}

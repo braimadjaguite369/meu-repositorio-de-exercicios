@@ -1,0 +1,45 @@
+{
+    "restaurante" : "A TASCA DA ESTG",
+    "ementa" : [
+        {
+            "tipo" : "Veggie-Pizza(VEP)",
+            "base" : "tiny",
+            "toppings" : ["spinach", "cheese", "tomato sauce"],
+            "price" : {
+                "S" : 6.00,
+                "M" : 8.00,
+                "B" : 12.00
+            }
+        },
+        {
+            "tipo" : "Mozzarella-Pizza(MZP)",
+            "base" : "crispy",
+            "toppings" : ["cheese", "oregano", "onion sauce"],
+            "price" : {
+                "S" : 7.00,
+                "M" : 8.50,
+                "B" : 13.00
+            }
+        },
+        {
+            "tipo" : "Meat-Pizza(MP)",
+            "base" : "lean",
+            "toppings" : ["chicken", "oregano", "tomato sauce"],
+            "price" : {
+                "S" : 6.00,
+                "M" : 9.00,
+                "B" : 12.50
+            }
+        },
+        {
+            "tipo" : "Mozzarella-Pizza(MZP)",
+            "base" : "tiny",
+            "toppings" : ["spinach", "cheese", "tomato sauce", "chicken"],
+            "price" : {
+                "S" : 6.00,
+                "M" : 8.50,
+                "B" : 15.00
+            }
+        }
+    ]
+}
